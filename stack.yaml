@@ -1,0 +1,45 @@
+resolver: lts-14.12
+
+build:
+  copy-bins: true
+
+# Local packages, usually specified by relative directory name
+packages:
+  - '.'
+
+# Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
+extra-deps:
+  - algebraic-graphs-0.2
+  - bloomfilter-2.0.1.0
+  - bound-2
+  - cacophony-0.10.1
+  - compactable-0.1.2.2
+  - lz4-0.2.3.1
+  - monad-gen-0.3.0.1
+  - prelude-extras-0.4.0.3
+  - strict-tuple-0.1.2
+  - unagi-chan-0.4.0.0
+  - katip-0.6.3.0
+  - FloatingHex-0.4
+
+  - git: git@github.com:kadena-io/pact.git
+    commit: 5f19f4b19675d7130fee4c41edd38a7c5938c940
+
+  # --- The following copied from Pact's stack.yaml --- #
+  # --- Missing from Stackage --- #
+  - ed25519-donna-0.1.1
+  - prettyprinter-convert-ansi-wl-pprint-1.1
+
+  # --- Forced Upgrades --- #
+  - sbv-8.2
+  - trifecta-2.1
+
+  # --- Custom Pins --- #
+  - git: https://github.com/kadena-io/thyme.git
+    commit: 6ee9fcb026ebdb49b810802a981d166680d867c9
+
+
+local-bin-path: ./bin
+# Extra directories used by stack for building
+# extra-include-dirs: [/path/to/dir]
+# extra-lib-dirs: [/path/to/dir]

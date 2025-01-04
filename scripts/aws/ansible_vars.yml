@@ -1,0 +1,21 @@
+# Absolute path to nuchain-beta executables directory
+bin_path: ~/nuchain-aws/bin/ubuntu-16.04
+
+# Absolute path to conf/ directory used to configure Nuchain Servers
+# Note: Using `~` or `~/` throws an error with Ansible.
+conf_path: ~/nuchain-aws
+
+# ----------- EC2 Nuchain Server Instances Specifications ---------------
+# The following specifications will be used to create all EC2 instances that will run
+# the nuchain servers.
+
+# Recommended Parameters
+# Community Version of Nuchain restricts to 4 Consensus nodes.
+instance_nuchain_server_count: 4
+instance_type: m4.2xlarge
+
+# MUST change the following parameters
+instance_region: us-west-2
+instance_key_name: sample-key
+instance_image: ami-0123456789   # AMI ID of Nuchain AMI for the instance_region
+instance_security_group: sample-sg
