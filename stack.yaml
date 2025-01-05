@@ -1,4 +1,4 @@
-resolver: lts-14.12
+resolver: lts-20.0
 
 build:
   copy-bins: true
@@ -6,6 +6,10 @@ build:
 # Local packages, usually specified by relative directory name
 packages:
   - '.'
+  # - submodules/pact-persist/
+  - submodules/pact/
+  - submodules/hdbc-odbc/
+  - submodules/thyme/
 
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:
@@ -21,9 +25,15 @@ extra-deps:
   - unagi-chan-0.4.0.0
   - katip-0.6.3.0
   - FloatingHex-0.4
+  - ekg-0.4.1.1@sha256:a153f6ae6765fcac222a88d9658c405db7eb26620c54f468ee7e98b12fb269aa,2115
+  - ekg-json-0.1.1.1@sha256:5442ae9923b946ac8c4807c5f94550491f4f0109e2c0033ecab50fd01e52a6bc,1340
+  - snap-core-1.0.5.1@sha256:0c2f6cbdf2ce5ebb7916444a2a421b185693732e4276a87e07dea40c552a8569,9820
+  - snap-server-1.1.2.1@sha256:3ed4373b3bc4a0f2d59752557dfa0f4caf1a198322451350b7cf6ae757b7eb42,15464
+  - true-name-0.2.0.0@sha256:859c3c45626f3d22787eef491ac23bcefbf1a00dd7b313742285f09466f877e5,2046
+  - readable-0.3.1@sha256:13b71e63627c21447a35fe4441154410c96ba1f241cf0353692883d0eebf2085,1127
 
-  - git: git@github.com:kadena-io/pact.git
-    commit: 5f19f4b19675d7130fee4c41edd38a7c5938c940
+  # - git: git@github.com:kadena-io/pact.git
+  #   commit: 5f19f4b19675d7130fee4c41edd38a7c5938c940
 
   # --- The following copied from Pact's stack.yaml --- #
   # --- Missing from Stackage --- #
@@ -35,11 +45,21 @@ extra-deps:
   - trifecta-2.1
 
   # --- Custom Pins --- #
-  - git: https://github.com/kadena-io/thyme.git
-    commit: 6ee9fcb026ebdb49b810802a981d166680d867c9
+  # - git: https://github.com/kadena-io/thyme.git
+  #   commit: 6ee9fcb026ebdb49b810802a981d166680d867c9
 
 
+allow-newer: true
+
+notify-if-nix-on-path: false
 local-bin-path: ./bin
 # Extra directories used by stack for building
 # extra-include-dirs: [/path/to/dir]
 # extra-lib-dirs: [/path/to/dir]
+allow-newer-deps: 
+  - bloomfilter
+  - bound
+  - nuchain
+  - pact
+  - strict-tuple
+  - trifecta

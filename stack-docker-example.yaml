@@ -7,7 +7,7 @@ build:
 packages:
   - '.'
 
-  - submodules/pact-persist/
+  # - submodules/pact-persist/
   - submodules/pact/
   - submodules/hdbc-odbc/
   - submodules/thyme/
@@ -15,7 +15,7 @@ packages:
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:
   - algebraic-graphs-0.2
-  - bloomfilter-2.0.1.0
+  - bloomfilter-2.0.1.2
   - bound-2
   - cacophony-0.10.1
   - compactable-0.1.2.2

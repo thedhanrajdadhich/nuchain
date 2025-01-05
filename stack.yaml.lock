@@ -89,16 +89,47 @@ packages:
   original:
     hackage: FloatingHex-0.4
 - completed:
-    commit: 5f19f4b19675d7130fee4c41edd38a7c5938c940
-    git: git@github.com:kadena-io/pact.git
-    name: pact
+    hackage: ekg-0.4.1.1@sha256:a153f6ae6765fcac222a88d9658c405db7eb26620c54f468ee7e98b12fb269aa,2115
     pantry-tree:
-      sha256: 5909a7bdf25fc8001a98c3c0d954999c9cbbc849434f8441fc5bdefcb084996c
-      size: 22823
-    version: 3.4.0
+      sha256: 0b0033de0e4aaf497e8028f4d4536d157cc2564cb34154ac1b065d420f96990b
+      size: 1495
   original:
-    commit: 5f19f4b19675d7130fee4c41edd38a7c5938c940
-    git: git@github.com:kadena-io/pact.git
+    hackage: ekg-0.4.1.1@sha256:a153f6ae6765fcac222a88d9658c405db7eb26620c54f468ee7e98b12fb269aa,2115
+- completed:
+    hackage: ekg-json-0.1.1.1@sha256:5442ae9923b946ac8c4807c5f94550491f4f0109e2c0033ecab50fd01e52a6bc,1340
+    pantry-tree:
+      sha256: 01bd3e4302412e0b741804c8aacc3303919d86ac5b47a6821adfb608578e92eb
+      size: 265
+  original:
+    hackage: ekg-json-0.1.1.1@sha256:5442ae9923b946ac8c4807c5f94550491f4f0109e2c0033ecab50fd01e52a6bc,1340
+- completed:
+    hackage: snap-core-1.0.5.1@sha256:0c2f6cbdf2ce5ebb7916444a2a421b185693732e4276a87e07dea40c552a8569,9820
+    pantry-tree:
+      sha256: 5922b3a2c46715dd191d37f35cebf698bd42f6aa091c4576982576fc5c0f0224
+      size: 3429
+  original:
+    hackage: snap-core-1.0.5.1@sha256:0c2f6cbdf2ce5ebb7916444a2a421b185693732e4276a87e07dea40c552a8569,9820
+- completed:
+    hackage: snap-server-1.1.2.1@sha256:3ed4373b3bc4a0f2d59752557dfa0f4caf1a198322451350b7cf6ae757b7eb42,15464
+    pantry-tree:
+      sha256: d354b1c02cc178fb404819db685ae931cb9a8437777bf9f7118858ef5ada4264
+      size: 3313
+  original:
+    hackage: snap-server-1.1.2.1@sha256:3ed4373b3bc4a0f2d59752557dfa0f4caf1a198322451350b7cf6ae757b7eb42,15464
+- completed:
+    hackage: true-name-0.2.0.0@sha256:859c3c45626f3d22787eef491ac23bcefbf1a00dd7b313742285f09466f877e5,2046
+    pantry-tree:
+      sha256: 43accb28d5d9b96306b0f0f396f928de98b981e44cb9dae63a6bba329bf68a3d
+      size: 268
+  original:
+    hackage: true-name-0.2.0.0@sha256:859c3c45626f3d22787eef491ac23bcefbf1a00dd7b313742285f09466f877e5,2046
+- completed:
+    hackage: readable-0.3.1@sha256:13b71e63627c21447a35fe4441154410c96ba1f241cf0353692883d0eebf2085,1127
+    pantry-tree:
+      sha256: 9432879be5327e8bad08a57cbb081149f27e88a1fb8df212dccd05ae7e65aa89
+      size: 313
+  original:
+    hackage: readable-0.3.1@sha256:13b71e63627c21447a35fe4441154410c96ba1f241cf0353692883d0eebf2085,1127
 - completed:
     hackage: ed25519-donna-0.1.1@sha256:344c0bb83603ed896012f441e54b380314dc4910320577cd18a9071e34f24fe9,2358
     pantry-tree:
@@ -127,20 +158,9 @@ packages:
       size: 1832
   original:
     hackage: trifecta-2.1
-- completed:
-    commit: 6ee9fcb026ebdb49b810802a981d166680d867c9
-    git: https://github.com/kadena-io/thyme.git
-    name: thyme
-    pantry-tree:
-      sha256: 6d9605f1ac1e08ab60860d68e0e47773fa6e762ba032756f2d3e1e20fb905ec2
-      size: 2198
-    version: 0.3.6.0
-  original:
-    commit: 6ee9fcb026ebdb49b810802a981d166680d867c9
-    git: https://github.com/kadena-io/thyme.git
 snapshots:
 - completed:
-    sha256: 26b807457213126d26b595439d705dc824dbb7618b0de6b900adc2bf6a059406
-    size: 545658
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/12.yaml
-  original: lts-14.12
+    sha256: a2cbcd2f37010a64c4ef74c21fd7e55982a07b49840d2bed306f9bac9981a9c3
+    size: 648420
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/20/0.yaml
+  original: lts-20.0

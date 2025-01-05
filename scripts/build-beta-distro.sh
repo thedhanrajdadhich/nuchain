@@ -60,7 +60,10 @@ chirp "Building version $version"
 if [ -z "$target" -o "$target" = "osx" ]; then
 
     chirp "Builing and Copying: OSX"
-    rm ./nuchain-beta/bin/osx/{genconfs,nuchainserver,nuchainclient}
+    # Check if the files exist before attempting to remove them
+    [ -f ./nuchain-beta/bin/osx/genconfs ] && rm ./nuchain-beta/bin/osx/genconfs
+    [ -f ./nuchain-beta/bin/osx/nuchainserver ] && rm ./nuchain-beta/bin/osx/nuchainserver
+    [ -f ./nuchain-beta/bin/osx/nuchainclient ] && rm ./nuchain-beta/bin/osx/nuchainclient
 
     safe stack install $STACK_FLAG
 

@@ -1,30 +1,43 @@
 name:                nuchain
-version:             1.4.0.0
-synopsis:            A high performance permissioned blockchain.
-description:         An implementation of ScalableBFT running Pact as the Smart Contract Language
-homepage:            https://github.com/buckie/nuchain
-author:              Will Martino, Stuart Popejoy, Mark Nichols
+version:             1.0.0.0
+synopsis:            A high-performance permissioned blockchain built for scalability and security.
+description:         NuChain is a cutting-edge Layer 0 platform that empowers developers to build Layer 1 blockchains within 10 hours. Utilizing the groundbreaking Proof of Synergized Participation (PoSP) and Pact as the Smart Contract Language, NuChain offers unparalleled innovation in the blockchain space. 
+homepage:            https://github.com/theblockchaincto/nuchain
+author:              Dhanraj Dadhich, Megharaj Dadhich
 maintainer:          dhanraj.dadhich@nuchain.co
 copyright:           Copyright (C) 2014-2025 Dhanraj Dadhich
                      Copyright (C) 2014-2025 Megharaj Dadhich
                      Copyright 2024-2025 (C) NuChain LLC
 
-license:             BSD3
+license:             BSD-3-Clause
 license-file:        LICENSE
 
-category:            Network
+category:            Network, Blockchain, Cryptocurrency
 build-type:          Simple
 cabal-version:       >=1.22
 
+extra-source-files:  README.md, CHANGELOG.md
+
 source-repository head
   type:     git
-  location: git@github.com:buckie/kadena.git
+  location: git@github.com:thedhanrajdadhich/nuchain.git
+
+source-repository-package
+  type: git
+  location: git@github.com:kadena-io/pact.git
+
+  type: git
+  location: https://github.com/kadena-io/thyme.git
 
 
 flag db-adapters
     description: enable DB adapters for MySQL, MSSQL (TBD)
     manual: False
     default: False
+
+flag kill-switch
+  description: Enable the kill switch feature
+  default: False
 
 library
   exposed-modules:     Apps.Nuchain.Client
@@ -100,7 +113,7 @@ library
                      , Nuchain.Types.Message.Signed
                      , Nuchain.Types.Metric
                      , Nuchain.Types.PactDB
-                     , Nuchain.Types.PreProc
+                     , Nupactchain.Types.PreProc
                      , Nuchain.Types.Private
                      , Nuchain.Types.Sender
                      , Nuchain.Types.Spec
@@ -118,9 +131,9 @@ library
                      , async
                      , attoparsec
                      , auto-update
-                     , base < 5
+                     , base <5
                      , base16-bytestring
-                     , base64-bytestring >= 1.0.0.1 && < 1.1
+                     , base64-bytestring >= 1.0.0.1 && <= 1.2.1.0
                      , binary
                      , bloomfilter
                      , bound
@@ -162,7 +175,7 @@ library
                      , mtl
                      , mtl-compat
                      , network
-                     , pact == 3.4.*
+                     , pact
                      , parallel
                      , parsers
                      , prelude-extras
@@ -205,12 +218,13 @@ library
   ghc-options:         -Wall -fno-warn-unused-do-bind -O3
   ghc-prof-options:    -fprof-auto -fprof-auto-calls
   default-language:    Haskell2010
+
   if flag(db-adapters)
-     cpp-options: -DDB_ADAPTERS=1
+    cpp-options: -DDB_ADAPTERS=1
 
 executable genconfs
   main-is:             GenerateConfigFiles.hs
-  build-depends:       base < 5
+  build-depends:       base <5
                      , bytestring
                      , containers
                      , unordered-containers
@@ -232,7 +246,7 @@ executable genconfs
 
 executable nuchainserver
   main-is:             NuchainServer.hs
-  build-depends:       base < 5
+  build-depends:       base <5
                      , nuchain
   hs-source-dirs:      executables
   ghc-options:         -Wall -threaded -O3 -rtsopts -with-rtsopts=-N -with-rtsopts=-T
@@ -241,7 +255,7 @@ executable nuchainserver
 
 executable nuchainclient
   main-is:             NuchainClient.hs
-  build-depends:       base < 5
+  build-depends:       base <5
                      , nuchain
                      , base16-bytestring
                      , extra
@@ -253,7 +267,7 @@ executable nuchainclient
 executable inserts
   main-is:       Main.hs
   other-modules: Util.TestRunner
-  build-depends:       base < 5
+  build-depends:       base <5
                      , aeson
                      , cmdargs
                      , bytestring
